@@ -1,3 +1,9 @@
 <?php
 
 putenv('DISPLAY_ERRORS_DETAILS=' . true);
+
+putenv('PROJETOCHICOUT_MYSQL_HOST=localhost');
+putenv('PROJETOCHICOUT_MYSQL_PORT=3306');
+putenv('PROJETOCHICOUT_MYSQL_DBNAME=projetochicout');
+putenv('PROJETOCHICOUT_MYSQL_USER=root');
+putenv('PROJETOCHICOUT_MYSQL_PASSWORD=');
