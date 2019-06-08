@@ -34,28 +34,28 @@ $app->delete('/FormaPagamento', FormaPagamentoController::class . ':deleteFormaP
 
 // ===============================================================
 
-$app->get('/ItensPedido', ItensPedidoController::class . ': getItensPedido');
+$app->get('/ItensPedido', ItensPedidoController::class . ':getItensPedido');
 $app->post('/ItensPedido', ItensPedidoController::class . ':insertItensPedido');
 $app->put('/ItensPedido', ItensPedidoController::class . ':updateItensPedido');
 $app->delete('/ItensPedido', ItensPedidoController::class . ':deleteItensPedido');
 
 // ===============================================================
 
-$app->get('/Pedido', PedidoController::class . ': getPedido');
+$app->get('/Pedido', PedidoController::class . ':getPedido');
 $app->post('/Pedido', PedidoController::class . ':insertPedido');
 $app->put('/Pedido', PedidoController::class . ':updatePedido');
 $app->delete('/Pedido', PedidoController::class . ':deletePedido');
 
 // ===============================================================
 
-$app->get('/Produto', ProdutoController::class . ': getProduto');
+$app->get('/Produto', ProdutoController::class . ':getProduto');
 $app->post('/Produto', ProdutoController::class . ':insertProduto');
 $app->put('/Produto', ProdutoController::class . ':updateProduto');
 $app->delete('/Produto', ProdutoController::class . ':deleteProduto');
 
 // ===============================================================
 
-$app->get('/Usuario', UsuarioController::class . ': getUsuario');
+$app->get('/Usuario', UsuarioController::class . ':getUsuario');
 $app->post('/Usuario', UsuarioController::class . ':insertUsuario');
 $app->put('/Usuario', UsuarioController::class . ':updateUsuario');
 $app->delete('/Usuario', UsuarioController::class . ':deleteUsuario');

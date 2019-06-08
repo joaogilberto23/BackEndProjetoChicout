@@ -9,25 +9,37 @@ final class ProdutoController
 {
     public function getProduto(Request $request, Response $response, array $args): Response
     {
-                
+        $response = $response->withJson([
+            'message' => 'Hello Word!'
+        ]);
+                     
         return $response;
     }
 
     public function insertProduto(Request $request, Response $response, array $args): Response
     {
-                
+        $response = $response->withJson([
+            'message' => 'Hello Word!'
+        ]);
+                     
         return $response;
     }
 
     public function updateProduto(Request $request, Response $response, array $args): Response
     {
-                
+        $response = $response->withJson([
+            'message' => 'Hello Word!'
+        ]);
+                     
         return $response;
     }
 
     public function deleteProduto(Request $request, Response $response, array $args): Response
     {
-                
+        $response = $response->withJson([
+            'message' => 'Hello Word!'
+        ]);
+                     
         return $response;
     }
     

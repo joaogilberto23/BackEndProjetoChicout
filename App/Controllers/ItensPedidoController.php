@@ -9,25 +9,37 @@ final class ItensPedidoController
 {
     public function getItensPedido(Request $request, Response $response, array $args): Response
     {
-                
+        $response = $response->withJson([
+            'message' => 'Hello Word!'
+        ]);
+                     
         return $response;
     }
 
     public function insertItensPedido(Request $request, Response $response, array $args): Response
     {
-                
+        $response = $response->withJson([
+            'message' => 'Hello Word!'
+        ]);
+                     
         return $response;
     }
 
     public function updateItensPedido(Request $request, Response $response, array $args): Response
     {
-                
+        $response = $response->withJson([
+            'message' => 'Hello Word!'
+        ]);
+                    
         return $response;
     }
 
     public function deleteItensPedido(Request $request, Response $response, array $args): Response
     {
-                
+        $response = $response->withJson([
+            'message' => 'Hello Word!'
+        ]);
+                    
         return $response;
     }
 }
