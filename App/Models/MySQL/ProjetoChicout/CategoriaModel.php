@@ -14,6 +14,8 @@ final class CategoriaModel
      */
     private $tipo_categoria;
 
+    //=======================================================================    
+
     /**
      * @return int
      */
@@ -31,6 +33,8 @@ final class CategoriaModel
         $this->id_categoria = $id_categoria;
         return $this;
     }
+
+    //=======================================================================
 
     /**
      * @return string

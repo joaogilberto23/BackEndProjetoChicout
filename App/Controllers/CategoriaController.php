@@ -18,6 +18,8 @@ final class CategoriaController
         return $response;
     }
 
+    //=======================================================================
+
     public function insertCategoria(Request $request, Response $response, array $args): Response
     {
         $data = $request->getParsedBody();
@@ -34,6 +36,8 @@ final class CategoriaController
         return $response;
     }
 
+    //=======================================================================
+
     public function updateCategoria(Request $request, Response $response, array $args): Response
     {
         $data = $request->getParsedBody();
@@ -42,16 +46,17 @@ final class CategoriaController
         $categoria = new CategoriaModel();
 
         $categoria->setIdCategoria((int)$data['id_categoria'])
-            ->setTipoCategoria($data['tipo_categoria']);
+                  ->setTipoCategoria($data['tipo_categoria']);
         $categoriaDAO ->updateCategoria($categoria);
 
         $response = $response->withJson([
             'message' => 'Categoria alterada com sucesso!'
         ]);
 
-
         return $response;
     }
+
+    //=======================================================================
 
     public function deleteCategoria(Request $request, Response $response, array $args): Response
     {
