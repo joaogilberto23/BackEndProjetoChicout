@@ -40,7 +40,7 @@ final class FormaPagamentoModel
     }
     //=======================================================================
     /**
-     * @return int
+     * @return string
      */
     public function getDescricaoFp(): string
     {
@@ -48,7 +48,7 @@ final class FormaPagamentoModel
     }
 
     /**
-     * @param int descricao_fp
+     * @param string descricao_fp
      * @return FormaPagamentoModel
      */
     public function setDescricaoFp(string $descricao_fp): FormaPagamentoModel
@@ -58,7 +58,7 @@ final class FormaPagamentoModel
     }
     //=======================================================================
     /**
-     * @return int
+     * @return string
      */
     public function getTipoFp(): string
     {
@@ -66,7 +66,7 @@ final class FormaPagamentoModel
     }
 
     /**
-     * @param int tipo_fp
+     * @param string tipo_fp
      * @return FormaPagamentoModel
      */
     public function setTipoFp(string $tipo_fp): FormaPagamentoModel

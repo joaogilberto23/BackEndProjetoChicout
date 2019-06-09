@@ -8,7 +8,7 @@ abstract class Conexao
      * @var \PDO
      */
     protected $pdo;
-
+    
     public function __construct()
     {
         $host = getenv('PROJETOCHICOUT_MYSQL_HOST');
@@ -25,5 +25,4 @@ abstract class Conexao
             \PDO::ERRMODE_EXCEPTION
         );
     }
-
 }

@@ -9,9 +9,7 @@ class FormaPagamentoDAO extends Conexao
     {
         parent::__construct();
     }
-
     //=======================================================================
-
     public function getAllFormaPagamento(): array
     {
         $formapagamento = $this->pdo
@@ -24,9 +22,7 @@ class FormaPagamentoDAO extends Conexao
 
         return $formapagamento;
     }
-
     //=======================================================================
-
     public function insertFormaPagamento(FormaPagamentoModel $formapagamento): void
     {
         $statement = $this->pdo
@@ -37,37 +33,30 @@ class FormaPagamentoDAO extends Conexao
         $statement->execute([
                 'descricao_fp' => $formapagamento->getDescricaoFp(),
                 'tipo_fp' => $formapagamento->getTipoFp()
-        ]);
+                ]);
     }
-
     //=======================================================================
-
     public function updateFormaPagamento(FormaPagamentoModel $formapagamento): void
     {
         $statement = $this->pdo
             ->prepare('UPDATE formapagamento SET
-                    descricao_fp = :descricao_fp,
-                    tipo_fp = :tipo_fp
-                    WHERE id_formaPagamento = :id_formaPagamento;');
+                        descricao_fp = :descricao_fp,
+                        tipo_fp = :tipo_fp
+                      WHERE id_formaPagamento = :id_formaPagamento;');
         $statement->execute([
+            'id_formaPagamento' => $formapagamento->getIdFormaPagamento(),
             'descricao_fp' => $formapagamento->getDescricaoFp(),
-            'tipo_fp' => $formapagamento->getTipoFp(),
-            'id_formaPagamento' => $formapagamento->getIdFormaPagamento()
-        ]);
+            'tipo_fp' => $formapagamento->getTipoFp()
+            ]);
     }
-
     //=======================================================================
-
     public function deleteFormaPagamento(int $id_formaPagamento): void
     {
         $statement = $this->pdo
             ->prepare('DELETE FROM formapagamento 
-                    WHERE id_formaPagamento = :id_formaPagamento;');
+                       WHERE id_formaPagamento = :id_formaPagamento;');
         $statement->execute([
             'id_formaPagamento' => $id_formaPagamento
-        ]);
+            ]);
     }
-
-
-
 }

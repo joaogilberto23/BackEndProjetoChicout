@@ -10,7 +10,6 @@ class CategoriaDAO extends Conexao
     {
         parent::__construct();
     }
-
     //=======================================================================
 
     public function getAllCategoria(): array
@@ -24,9 +23,7 @@ class CategoriaDAO extends Conexao
 
         return $categoria;
     }
-
     //=======================================================================
-
     public function insertCategoria(CategoriaModel $categoria): void
     {
         $statement = $this->pdo
@@ -34,34 +31,29 @@ class CategoriaDAO extends Conexao
                        VALUES(NULL,
                               :tipo_categoria);');
         $statement->execute([
-                'tipo_categoria' => $categoria->getTipoCategoria()
-        ]);
+            'tipo_categoria' => $categoria->getTipoCategoria()
+            ]);
     }
-
     //=======================================================================
-
     public function updateCategoria(CategoriaModel $categoria): void
     {
         $statement = $this->pdo
             ->prepare('UPDATE categoria SET
-                tipo_categoria = :tipo_categoria
-                WHERE id_categoria = :id_categoria;');
+                              tipo_categoria = :tipo_categoria
+                       WHERE id_categoria = :id_categoria;');
         $statement->execute([
-            'tipo_categoria' => $categoria->getTipoCategoria(),
-            'id_categoria' => $categoria->getIdCategoria()
-        ]);
+            'id_categoria' => $categoria->getIdCategoria(),
+            'tipo_categoria' => $categoria->getTipoCategoria()
+            ]);
     }
-
     //=======================================================================
-
     public function deleteCategoria(int $id_categoria): void
     {
         $statement = $this->pdo
             ->prepare('DELETE FROM categoria 
-                WHERE id_categoria = :id_categoria;');
+                       WHERE id_categoria = :id_categoria;');
         $statement->execute([
             'id_categoria' => $id_categoria
-        ]);
+            ]);
     }
-
 }
