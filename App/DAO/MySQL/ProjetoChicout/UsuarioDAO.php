@@ -8,4 +8,34 @@ class UsuarioDAO extends Conexao
     {
         parent::__construct();
     }
+
+    //=======================================================================
+
+    public function getAllUsuario(): array
+    {
+        $usuario = $this->pdo
+            ->query('SELECT
+                        id_usuario,
+                        tipo_usuario,
+                        nome,
+                        login,
+                        senha,
+                        cpf,
+                        email,
+                        data_nascimento,
+                        tel_celular,
+                        tel_fixo
+                    FROM usuario;')
+            ->fetchAll(\PDO::FETCH_ASSOC);
+
+        return $usuario;
+    }
+
+    //=======================================================================
+
+    //=======================================================================
+
+    //=======================================================================
+    
+
 }

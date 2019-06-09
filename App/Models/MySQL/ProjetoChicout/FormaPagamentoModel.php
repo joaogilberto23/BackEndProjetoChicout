@@ -19,9 +19,8 @@ final class FormaPagamentoModel
      * @var string
      */
     private $tipo_fp;
-
+    
     //=======================================================================
-
     /**
      * @return int
      */
@@ -39,9 +38,7 @@ final class FormaPagamentoModel
         $this->id_formaPagamento = $id_formaPagamento;
         return $this;
     }
-
     //=======================================================================
-
     /**
      * @return int
      */
@@ -59,9 +56,7 @@ final class FormaPagamentoModel
         $this->descricao_fp = $descricao_fp;
         return $this;
     }
-
     //=======================================================================
-
     /**
      * @return int
      */

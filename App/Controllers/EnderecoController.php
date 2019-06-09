@@ -4,15 +4,17 @@ namespace App\Controllers;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
+use App\DAO\MySQL\ProjetoChicout\EnderecoDAO;
 
 final class EnderecoController
 {
     public function getEndereco(Request $request, Response $response, array $args): Response
     {
-        $response = $response->withJson([
-            'message' => 'Hello Word!'
-        ]);
-                        
+        $enderecoDAO = new EnderecoDAO();
+        
+        $endereco = $enderecoDAO->getAllEndereco();
+        $response = $response->withJson($endereco);      
+
         return $response;
     }
 
