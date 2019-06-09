@@ -35,15 +35,15 @@ class UsuarioDAO extends Conexao
         $statement = $this->pdo
             ->prepare('INSERT INTO usuario
                        VALUES(NULL,
-                              tipo_usuario = :tipo_usuario,
-                              nome = :nome,
-                              login = :login,
-                              senha = :senha,
-                              cpf = :cpf,
-                              email = :email,
-                              data_nascimento = :data_nascimento,
-                              tel_celular = :tel_celular,
-                              tel_fixo = :tel_fixo);');
+                              :tipo_usuario,
+                              :nome,
+                              :login,
+                              :senha,
+                              :cpf,
+                              :email,
+                              :data_nascimento,
+                              :tel_celular,
+                              :tel_fixo);');
         $statement->execute([
             'tipo_usuario' => $usuario->getTipoUsuario(),
             'nome' => $usuario->getNome(),
@@ -60,7 +60,7 @@ class UsuarioDAO extends Conexao
     public function updateUsuario(UsuarioModel $usuario): void
     {
         $statement = $this->pdo
-            ->prepare('UPDATE produto SET   
+            ->prepare('UPDATE usuario SET   
                        tipo_usuario = :tipo_usuario,
                        nome = :nome,
                        login = :login,

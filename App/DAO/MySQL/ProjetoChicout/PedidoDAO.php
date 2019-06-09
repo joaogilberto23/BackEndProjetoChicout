@@ -31,11 +31,11 @@ class PedidoDAO extends Conexao
         $statement = $this->pdo
             ->prepare('INSERT INTO pedido
                        VALUES(NULL,
-                              id_usuario = :id_usuario,
-                              id_formaPagamento = :id_formaPagamento,
-                              data_pedido = :data_pedido,
-                              data_entrega = :data_entrega,
-                              valor_pedido = :valor_pedido);');
+                              :id_usuario,
+                              :id_formaPagamento,
+                              :data_pedido,
+                              :data_entrega,
+                              :valor_pedido);');
         $statement->execute([
             'id_usuario' => $pedido->getIdUsuario(),
             'id_formaPagamento' => $pedido->getIdFormaPagamento(),

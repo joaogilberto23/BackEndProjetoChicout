@@ -31,11 +31,11 @@ class ProdutoDAO extends Conexao
         $statement = $this->pdo
             ->prepare('INSERT INTO produto
                        VALUES(NULL,
-                       id_categoria = :id_categoria,
-                       nome = :nome,
-                       valor_produto = :valor_produto,
-                       estoque = :estoque,
-                       tamanho = :tamanho);');
+                       :id_categoria,
+                       :nome,
+                       :valor_produto,
+                       :estoque,
+                       :tamanho);');
         $statement->execute([
             'id_categoria' => $produto->getIdCategoria(),
             'nome' => $produto->getNome(),
@@ -57,7 +57,7 @@ class ProdutoDAO extends Conexao
                       WHERE id_produto = :id_produto;');
         $statement->execute([
             'id_produto' => $produto->getIdProduto(),
-            'id_categoria' => $produto->getIdUsuario(),
+            'id_categoria' => $produto->getIdCategoria(),
             'nome' => $produto->getNome(),
             'valor_produto' => $produto->getValorProduto(),
             'estoque' => $produto->getEstoque(),

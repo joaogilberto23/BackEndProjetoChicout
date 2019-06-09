@@ -64,7 +64,7 @@ final class ItensPedidoModel
      */
     public function getQuantidade(): int
     {
-        return $this->id_produto;
+        return $this->quantidade;
     }
     /**
      * @param int quantidade
@@ -81,7 +81,7 @@ final class ItensPedidoModel
      */
     public function getValorItens(): float
     {
-        return $this->id_produto;
+        return $this->valor_itens;
     }
     /**
      * @param float valor_itens

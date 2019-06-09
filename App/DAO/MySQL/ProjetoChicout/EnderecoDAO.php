@@ -35,15 +35,15 @@ class EnderecoDAO extends Conexao
         $statement = $this->pdo
             ->prepare('INSERT INTO endereco
                        VALUES(NULL,
-                             id_usuario = :id_usuario,
-                             logradouro = :logradouro,
-                             numero = :numero,
-                             cidade = :cidade,
-                             bairro = :bairro,
-                             estado = :estado,
-                             cep = :cep,
-                             complemento = :complemento,
-                             referencia = :referencia);');
+                             :id_usuario,
+                             :logradouro,
+                             :numero,
+                             :cidade,
+                             :bairro,
+                             :estado,
+                             :cep,
+                             :complemento,
+                             :referencia);');
         $statement->execute([
                 'id_usuario' => $endereco->getIdUsuario(),
                 'logradouro' => $endereco->getLogradouro(),
@@ -59,30 +59,31 @@ class EnderecoDAO extends Conexao
     //=======================================================================
     public function updateEndereco(EnderecoModel $endereco): void
     {
-        $statement = $this->pdo
-            ->prepare('UPDATE endereco SET
-                        id_usuario = :id_usuario,        
-                        logradouro = :logradouro,
-                        numero = :numero,
-                        cidade = :cidade,
-                        bairro = :bairro,
-                        estado = :estado,
-                        cep = :cep,
-                        complemento = :complemento,
-                        referencia = :referencia
-                      WHERE id_endereco = :id_endereco;');
-        $statement->execute([
-            'id_endereco' => $endereco->getIdEnderco(),
-            'id_usuario' => $endereco->getIdUsuario(),
-            'logradouro' => $endereco->getLogradouro(),
-            'numero' => $endereco->getNumero(),
-            'cidade' => $endereco->getCidade(),
-            'bairro' => $endereco->getBairro(),
-            'estado'=> $endereco->getEstado(),
-            'cep' => $endereco->getCep(),
-            'complemento' => $endereco->getComplemento(),
-            'referencia' => $endereco->getReferencia()
-            ]);
+            $statement = $this->pdo
+                ->prepare('UPDATE endereco SET   
+                                  id_usuario = :id_usuario,
+                                  logradouro = :logradouro,
+                                  numero = :numero,
+                                  cidade = :cidade,
+                                  bairro = :bairro,
+                                  estado = :estado,
+                                  cep = :cep,
+                                  complemento = :complemento,
+                                  referencia = :referencia
+                          WHERE id_endereco = :id_endereco;');
+
+            $statement->execute([
+                'id_endereco' => $endereco->getIdEndereco(),
+                'id_usuario' => $endereco->getIdUsuario(),
+                'logradouro' => $endereco->getLogradouro(),
+                'numero' => $endereco->getNumero(),
+                'cidade' => $endereco->getCidade(),
+                'bairro' => $endereco->getBairro(),
+                'estado' => $endereco->getEstado(),
+                'cep' => $endereco->getCep(),
+                'complemento' => $endereco->getComplemento(),
+                'referencia' => $endereco->getReferencia()
+                ]);                
     }
     //=======================================================================
     public function deleteEndereco(int $id_endereco): void
@@ -93,5 +94,6 @@ class EnderecoDAO extends Conexao
         $statement->execute([
             'id_endereco' => $id_endereco
             ]);
-    }        
+    } 
+           
 }

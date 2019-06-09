@@ -14,14 +14,13 @@ final class FormaPagamentoController
         $formaPagamentoDAO = new FormaPagamentoDAO();
         
         $formaPagamento = $formaPagamentoDAO->getAllFormaPagamento();
+
         $response = $response->withJson($formaPagamento);      
 
         return $response;
 
     }
-
     //=======================================================================
-
     public function insertFormaPagamento(Request $request, Response $response, array $args): Response
     {
         $data = $request->getParsedBody();
@@ -29,8 +28,9 @@ final class FormaPagamentoController
         $formaPagamentoDAO = new FormaPagamentoDAO();
         $formaPagamento = new FormaPagamentoModel();   
 
-        $formaPagamento->setDescricaoFp($data['descricao_fp']);
-        $formaPagamento->setTipoFp($data['tipo_fp']);	
+        $formaPagamento->setDescricaoFp($data['descricao_fp'])
+                       ->setTipoFp($data['tipo_fp']);	
+
         $formaPagamentoDAO->insertFormaPagamento($formaPagamento);
 
         $response = $response->withJson([
@@ -38,11 +38,8 @@ final class FormaPagamentoController
         ]);
 
         return $response;
-
     }
-
     //=======================================================================
-
     public function updateFormaPagamento(Request $request, Response $response, array $args): Response
     {
        
@@ -54,6 +51,7 @@ final class FormaPagamentoController
         $formaPagamento->setIdFormaPagamento((int)$data['id_formaPagamento'])
                        ->setDescricaoFp($data['descricao_fp'])
                        ->setTipoFp($data['tipo_fp']);
+
         $formaPagamentoDAO ->updateFormaPagamento($formaPagamento);
 
         $response = $response->withJson([
@@ -61,11 +59,8 @@ final class FormaPagamentoController
         ]);
 
         return $response;
-
     }
-
     //=======================================================================
-
     public function deleteFormaPagamento(Request $request, Response $response, array $args): Response
     {
          
@@ -74,6 +69,7 @@ final class FormaPagamentoController
         $formaPagamentoDAO = new FormaPagamentoDAO();
 
         $id_formaPagamento = (int)$data['id_formaPagamento'];
+
         $formaPagamentoDAO->deleteFormaPagamento($id_formaPagamento);
 
         $response = $response->withJson([
@@ -82,6 +78,6 @@ final class FormaPagamentoController
 
         return $response;
 
-    }
-    
+    }   
+     
 }

@@ -40,7 +40,7 @@ final class EnderecoModel
     private $estado;
 
     /**
-     * @var int
+     * @var string
      */
     private $cep;
 
@@ -55,18 +55,18 @@ final class EnderecoModel
     private $referencia;
 
     //===============================================================
-    /**
+   /**
      * @return int
      */
-    public function getIdEnderco(): int
+    public function getIdEndereco(): int
     {
         return $this->id_endereco;
-    }
+    }    
     /**
      * @param int id_endereco
      * @return EnderecoModel
      */
-    public function setIdEnderco(int $id_endereco): EnderecoModel
+    public function setIdEndereco(int $id_endereco): EnderecoModel
     {
         $this->id_endereco = $id_endereco;
         return $this;
@@ -175,17 +175,17 @@ final class EnderecoModel
     }
     //=============================================================== 
     /**
-     * @return int
+     * @return string
      */
-    public function getCep(): int
+    public function getCep(): string
     {
         return $this->cep;
     }
     /**
-     * @param int cep
+     * @param string cep
      * @return EnderecoModel
      */
-    public function setCep(int $cep): EnderecoModel
+    public function setCep(string $cep): EnderecoModel
     {
         $this->cep = $cep;
         return $this;

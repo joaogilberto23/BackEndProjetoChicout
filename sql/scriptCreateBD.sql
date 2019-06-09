@@ -28,7 +28,7 @@ numero			INTEGER			NOT NULL,
 cidade			VARCHAR(20)		NOT NULL,
 bairro			VARCHAR(50)		NOT NULL,
 estado			CHAR(2)			NOT NULL,
-cep				INTEGER			NOT NULL,
+cep				VARCHAR(8)		NOT NULL,
 complemento		VARCHAR(150),
 referencia		VARCHAR(150),
 FOREIGN KEY(id_usuario) REFERENCES usuario(id_usuario)

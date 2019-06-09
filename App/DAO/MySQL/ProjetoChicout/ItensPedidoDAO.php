@@ -28,10 +28,10 @@ class ItensPedidoDAO extends Conexao
     {
         $statement = $this->pdo
             ->prepare('INSERT INTO itenspedido
-                       VALUES(id_pedido = :id_pedido,
-                              id_produto = :id_produto,
-                              quantidade = :quantidade,
-                              valor_itens = :valor_itens);');
+                       VALUES(:id_pedido,
+                              :id_produto,
+                              :quantidade,
+                              :valor_itens);');
         $statement->execute([
             'id_pedido' => $itenspedido->getIdPedido(),
             'id_produto' => $itenspedido->getIdProduto(),
@@ -47,8 +47,7 @@ class ItensPedidoDAO extends Conexao
                               id_produto = :id_produto,
                               quantidade = :quantidade,
                               valor_itens = :valor_itens
-                      WHERE id_pedido = :id_pedido 
-                        AND id_produto = :id_produto;');
+                      WHERE id_pedido = :id_pedido;');
         $statement->execute([
             'id_pedido' => $itenspedido->getIdPedido(),
             'id_produto' => $itenspedido->getIdProduto(),

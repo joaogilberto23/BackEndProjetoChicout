@@ -1,7 +1,6 @@
 <?php
 
 namespace App\DAO\MySQL\ProjetoChicout;
-
 use App\Models\MySQL\ProjetoChicout\CategoriaModel;
 
 class CategoriaDAO extends Conexao

@@ -22,7 +22,6 @@ final class CategoriaModel
     {
         return $this->id_categoria;
     }
-
     /**
      * @param int id_categoria
      * @return CategoriaModel
@@ -40,7 +39,6 @@ final class CategoriaModel
     {
         return $this->tipo_categoria;
     }
-
     /**
      * @param string tipo_categoria
      * @return CategoriaModel
